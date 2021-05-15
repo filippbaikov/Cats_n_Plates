@@ -1,6 +1,8 @@
 package com.company;
 
 
+import java.util.Scanner;
+
 public class Main {
 
 
@@ -23,6 +25,11 @@ public class Main {
         System.out.println();
         haveLunch(cats,plate);
         printInfo(cats,plate);
+    } private static void addFood(Plate plate){
+        Scanner scan=new Scanner(System.in);
+        System.out.print("enter new food count: ");
+        int foodCount=scan.nextInt();
+        plate.addFood(foodCount);
     }
     private static void printInfo(Cat[] cats, Plate plate){
         System.out.println("-------");
@@ -42,7 +49,7 @@ public class Main {
         for (Cat cat : cats){
             System.out.printf("is cat '%s(appetite: %d)' hungry? Answer: %s%n",
                     cat.getName(), cat.getAppetite(),
-                    !cat.isSatiety());
+                    !cat.isFullness());
         }
 
     }
